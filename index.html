@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Multiplication Table</title>
+</head>
+
+<body>
+    <h1>Multiplication chart</h1>
+    <label for="input">Enter an integer number from 1 to 10:</label>
+    <input type="number" id="input" required>
+    <br>
+
+    <button onclick = "Multiplication()">Multiplication chart</button>
+    <p id="reply"></p>
+
+    <script>
+
+        const INPUT = document.getElementById("input");
+
+        function Multiplication() {
+            let input = Number(INPUT.value);
+
+            if (isNaN(input) || input < 1 || input > 10 || !Number.isInteger(input)) {
+                document.getElementById("reply").innerHTML = "Please enter an integer value from 1 to 10";
+            } else {
+                let output = `<p>This is the multiplication chart of ${input}:</p>`;
+                for (let count = 0; count <= 10 ;count++) {
+                    output += `${input} * ${count} = ${input * count}<br>`;
+                }
+                document.getElementById("reply").innerHTML = output;
+            }
+
+        }
+    </script>
+</body>
+
+</html>
